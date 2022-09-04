@@ -41,4 +41,5 @@ public class CandidateDTO {
     private String creatorUser;
     @NotEmpty(message = "required")
     private String candidateStatus;
+    Long techStackId;
 }

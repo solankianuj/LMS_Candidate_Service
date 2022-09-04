@@ -5,7 +5,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.List;
+
 
 /**
  * purpose:creating candidate model
@@ -32,9 +32,7 @@ public class CandidateModel {
     private String passOutYear;
     private String creatorUser;
     private String candidateStatus;
-//    @OneToMany
-//    @CollectionTable(name = "techStackDataMapping",joinColumns = @JoinColumn(name = "techStackId"))
-//    private List<TechStackModel> techStackModelList;
+    Long techStackId;
     private LocalDateTime creationTimeStamp;
     private LocalDateTime updateTimeStamp;
 
@@ -53,6 +51,7 @@ public class CandidateModel {
         this.passOutYear=candidateDTO.getPassOutYear();
         this.creatorUser=candidateDTO.getCreatorUser();
         this.candidateStatus=candidateDTO.getCandidateStatus();
+        this.techStackId=candidateDTO.getTechStackId();
     }
 
     public CandidateModel() {
